@@ -1,10 +1,12 @@
+html,
 body {
-  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-size: 14px;
-  line-height: 2em;
   color: #eee;
-  padding: 0.2%;
+  padding: 0;
+  margin: 0;
   background-color: #121212;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -12,15 +14,25 @@ h1 {
   margin-block-start: 0.2%;
   font-size: 1.5em;
   color: #9c8cff;
-  padding: 0.2%;
+  padding: 0.7em;
 }
 
 #howMany {
   font-size: 0.7em;
 }
 
+#app {
+  margin: 0 10px;
+}
+
 .entry {
+  line-height: 2em;
+  width: 100%;
+  max-width: 100%;
   border-top: 0.5px solid rgba(115, 64, 199, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #entryContainer {
@@ -29,7 +41,6 @@ h1 {
 
 .index {
   font-size: 0.8em;
-  padding-left: 0.5%;
   padding-right: 5px;
   color: #9c8cff;
 }
@@ -41,12 +52,17 @@ h1 {
 }
 
 .comment {
-  padding-left: 6px;
+  padding-left: 5px;
   font-size: 0.7em;
 }
 
 .left {
-  float: right;
+  flex: 1;
+}
+
+.right {
+  flex: none;
+  width: fit-content;
 }
 
 .comment a:link {
@@ -84,12 +100,11 @@ a:active {
 #red-square {
   background-color: rgba(255, 255, 255, 0.9);
   width: 130px;
-  height: 50px;
   position: absolute;
   left: 50%;
   top: 50%;
   /*opacity: 0;*/
-  color:black;
+  color: black;
   font-size: 18px;
   text-align: center;
   transform: translate(-50%, -50%);
@@ -100,13 +115,20 @@ a:active {
   box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 1);
 
 }
-#red-square > div {
+
+#red-square>div {
   padding: 5px;
 }
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 4s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 4s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */
+  {
+  opacity: 0;
+}

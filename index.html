@@ -16,9 +16,10 @@
     <div id="app">
         <div id="entryContainer">
             <div v-for="(item,index) in alldata" class="entry">
-                <span class="index">{{index+1}}.</span>
-                <a :href=item.url target="_blank" rel="noopener noreferrer" :id=item.id >{{item.title }}</a>
-                <span class="left">
+                <span class="left"> <span class="index">{{index+1}}.</span>
+                    <a :href=item.url target="_blank" rel="noopener noreferrer" :id=item.id>{{item.title }}</a>
+                </span>
+                <span class="right">
                     <span v-if="item.domain" class="domain">{{item.domain}}</span>
                     <span class="comment"><a :href=`https://news.ycombinator.com/item?id=${item.id}` target="_blank"
                             rel="noopener noreferrer">&#9839;</a></span>
@@ -27,7 +28,9 @@
             </div>
         </div>
         <transition name="fade">
-        <div id="red-square" v-if="show"><div>{{msg}}</div></div>
+            <div id="red-square" v-if="show">
+                <div>{{msg}}</div>
+            </div>
         </transition>
     </div>
 
